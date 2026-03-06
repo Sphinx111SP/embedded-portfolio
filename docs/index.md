@@ -1,17 +1,15 @@
-# Welcome to MkDocs
+# Embedded Systems Portfolio
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Hi, I'm Emmanuel Nhial, welcome to my embedded systems logging portfolio:
 
-## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+This website documents my **weekly progress during my embedded systems training**.
 
-## Project layout
+## What you'll find here
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- My weekly build logs
+- Projects and experiments
+- Problems I solved
+- Lessons learned
+
+➡Go to the [Build Log](blog/week01/index.md) section to see my progress.
