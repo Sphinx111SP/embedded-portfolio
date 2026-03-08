@@ -33,6 +33,18 @@
          <lastmod>2026-03-08</lastmod>
     </url>
     <url>
+         <loc>http://www.example.com/build-log/week02/</loc>
+         <lastmod>2026-03-08</lastmod>
+    </url>
+    <url>
+         <loc>http://www.example.com/build-log/week03.md/friday/</loc>
+         <lastmod>2026-03-08</lastmod>
+    </url>
+    <url>
+         <loc>http://www.example.com/build-log/week03.md/wednesday/</loc>
+         <lastmod>2026-03-08</lastmod>
+    </url>
+    <url>
          <loc>http://www.example.com/blog/archive/2023/</loc>
          <lastmod>2026-03-08</lastmod>
     </url>
