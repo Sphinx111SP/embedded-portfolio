@@ -12,4 +12,14 @@ This website documents my **weekly progress during my embedded systems training*
 - Problems I solved
 - Lessons learned
 
+## Directory structure
+
+To keep the documentation systematic, each weekly log is broken down into standard operational components:
+
+- Architecture: Hardware selection, component lists, and system design.
+- Schematics: Wiring, signal routing, and power distribution diagrams.
+- Source Code: Core firmware logic and communication protocols.
+- Diagnostics: Troubleshooting hardware faults, I2C/SPI conflicts, and logic debuggin
+
+## Initialization
 ➡Go to the [Build Log](blog/week01/index.md) section to see my progress.
