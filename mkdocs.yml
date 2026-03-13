@@ -1,11 +1,10 @@
-site_name: Embedded systems training
+site_name: Embedded systems portfolio
 site_description: Weekly build log for my embedded systems training
 site_url: http://www.example.com
 
 theme:
   name: material
-  features:
-    - navigation.indexes
+  
 
 plugins:
   - search
@@ -45,5 +44,6 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Build Log:
-      - Week 1: blog/week01/index.md
-      - Week 2: blog/week02/index.md
+      - Week 1: build-log/week01/index.md
+      - Week 2: build-log/week02/index.md
+      - Week 3: build-log/week03/index.md
