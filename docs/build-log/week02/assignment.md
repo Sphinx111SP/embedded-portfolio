@@ -1,6 +1,8 @@
 ## Objective
 To generate a geometry calculator using python 
 
+### Source code 
+```python
 import math
 
 class Shape:
@@ -42,3 +44,12 @@ print("Circle area:", circle.area())
 print("Square area:", square.area())
 print("Rectangle area:", rectangle.area())
 print("Right Triangle area:", triangle.area())
+```
+
+### Execution output
+```
+Circle area: 78.54
+Square area: 25
+Rectangle area: 24
+Triangle area: 12.0
+```

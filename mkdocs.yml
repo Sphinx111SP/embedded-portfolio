@@ -35,15 +35,39 @@ extra:
 hooks:
   - hooks/socialmedia.py
 
+
+
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
+extra_css:
+  - stylesheets/extra.css
+
 nav:
   - Home: index.md
   - Build Log:
-      - Week 1: build-log/week01/index.md
+      - Week 1:
       - Week 2: build-log/week02/index.md
       - Week 3: build-log/week03/index.md
+      - Week 4: build-log/week04/index.md
+
+nav:
+  - Home: index.md
+  - Build Log:
+    - Week 1: build-log/week01/index.md
+        
+    - Week 2:
+        - Wednesday: build-log/week02/wednesday.md
+        - Friday: build-log/week02/friday.md
+        - Assignment: build-log/week02/assignment.md
+    - Week 3:
+        - Monday: build-log/week03/monday.md
+        - Wednesday: build-log/week03/wednesday.md
+        - Friday: build-log/week03/friday.md
+    - Week 4:
+        - Monday: build-log/week04/monday.md
+        - Wednesday: build-log/week04/wednesday.md
+        - Friday: build-log/week04/friday.md
