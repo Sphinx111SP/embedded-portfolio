@@ -5,8 +5,11 @@ To interface an HC-SR04 ultrasonic distance sensor with the Raspberry Pi Pico W 
 ## Hardware theory
 ## The 4 pins
 1.Vcc:Power
+
 2.GND:ground(0 v)
+
 3.TRIG:(Trigger)The microcontroller sends a tiny 10-microsecond HIGH pulse to this pin. This tells the sensor to blast a burst of 8 ultrasonic sound waves (at 40 kHz, above human hearing) into the air.
+
 4.ECHO: After the sound fires, this pin goes HIGH. It stays HIGH while the sound travels through the air, bounces off an object, and returns. Once the sensor hears the echo, this pin drops back to LOW.
 
 ## Logic
