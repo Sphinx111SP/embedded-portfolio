@@ -15,7 +15,7 @@ You will be required to complete the assignment in TinkerCAD:
 2. Create new Circuits project.
 3. From the right panel find and place the items you can identify in this image below.
 ```
-![My Circuit](docs/images/assignment101.png)
+![My Circuit](../../images/assignment101.png)
 
 # Part 1 :Button controlled LED
 ## Source code 
