@@ -1382,10 +1382,10 @@
 <p>To interface an HC-SR04 ultrasonic distance sensor with the Raspberry Pi Pico W using CircuitPython.</p>
 <h2 id="hardware-theory">Hardware theory</h2>
 <h2 id="the-4-pins">The 4 pins</h2>
-<p>1.Vcc:Power
-2.GND:ground(0 v)
-3.TRIG:(Trigger)The microcontroller sends a tiny 10-microsecond HIGH pulse to this pin. This tells the sensor to blast a burst of 8 ultrasonic sound waves (at 40 kHz, above human hearing) into the air.
-4.ECHO: After the sound fires, this pin goes HIGH. It stays HIGH while the sound travels through the air, bounces off an object, and returns. Once the sensor hears the echo, this pin drops back to LOW.</p>
+<p>1.Vcc:Power</p>
+<p>2.GND:ground(0 v)</p>
+<p>3.TRIG:(Trigger)The microcontroller sends a tiny 10-microsecond HIGH pulse to this pin. This tells the sensor to blast a burst of 8 ultrasonic sound waves (at 40 kHz, above human hearing) into the air.</p>
+<p>4.ECHO: After the sound fires, this pin goes HIGH. It stays HIGH while the sound travels through the air, bounces off an object, and returns. Once the sensor hears the echo, this pin drops back to LOW.</p>
 <h2 id="logic">Logic</h2>
 <p>By measuring exactly how long the ECHO pin stayed HIGH, we know the total round-trip flight time of the sound wave.</p>
 <p>Since the speed of sound in air is relatively constant(343 m/s)
