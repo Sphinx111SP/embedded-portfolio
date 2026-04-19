@@ -1,0 +1,2661 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Weekly build log for my embedded systems training">
+      
+      
+      
+        <link rel="canonical" href="http://www.example.com/build-log/week08/friday/">
+      
+      
+        <link rel="prev" href="../wednesday/">
+      
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Friday - Embedded systems portfolio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#real-time-operating-systems-rtos-in-embedded-systems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Embedded systems portfolio" class="md-header__button md-logo" aria-label="Embedded systems portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Embedded systems portfolio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Friday
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Embedded systems portfolio" class="md-nav__button md-logo" aria-label="Embedded systems portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Embedded systems portfolio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Log
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Build Log
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Week 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week02/wednesday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wednesday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week02/friday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Friday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week02/assignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Week 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week03/monday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week03/wednesday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wednesday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week03/friday.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Friday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Week 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week04/monday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week04/wednesday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wednesday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week04/friday.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Friday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 5
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Week 5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week05/monday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week05/assignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week05/wednesday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wednesday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 6
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Week 6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week06/monday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week06/wednesday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wednesday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 7
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Week 7
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week07/wednesday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wednesday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week07/friday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Friday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 8
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Week 8
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wednesday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wednesday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Friday
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Friday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-user-space-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. User Space Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-kernel-core-of-the-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Kernel (Core of the OS)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Kernel (Core of the OS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responsibilities:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-shell-optional-in-embedded-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Shell (Optional in Embedded Systems)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtos-real-time-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTOS (Real-Time Operating System)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RTOS (Real-Time Operating System)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Feature:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts-of-rtos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Concepts of RTOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Concepts of RTOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-multitasking-and-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Multitasking and Concurrency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tasks-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Tasks (Threads)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cpu-execution-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. CPU Execution Cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduling-in-rtos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduling in RTOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scheduling in RTOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-scheduling-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Scheduling Types:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Scheduling Types:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-time-slicing-round-robin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Time Slicing (Round Robin)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-priority-based-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Priority-Based Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-preemptive-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Preemptive Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bare-metal-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bare-Metal Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bare-Metal Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Characteristics:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disadvantages:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtos-vs-bare-metal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTOS vs Bare-Metal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedded-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedded Operating Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Embedded Operating Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-linux-based-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Linux-based Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-rtos-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. RTOS Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#freertos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FreeRTOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FreeRTOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Use Cases:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zephyr-rtos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zephyr RTOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zephyr RTOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#used-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Used In:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cores-and-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cores and Threads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cores and Threads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-cores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPU Cores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Threads
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-user-space-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. User Space Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-kernel-core-of-the-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Kernel (Core of the OS)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Kernel (Core of the OS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responsibilities:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-shell-optional-in-embedded-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Shell (Optional in Embedded Systems)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtos-real-time-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTOS (Real-Time Operating System)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RTOS (Real-Time Operating System)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Feature:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts-of-rtos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Concepts of RTOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Concepts of RTOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-multitasking-and-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Multitasking and Concurrency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tasks-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Tasks (Threads)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cpu-execution-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. CPU Execution Cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduling-in-rtos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduling in RTOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scheduling in RTOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-scheduling-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Scheduling Types:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Scheduling Types:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-time-slicing-round-robin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Time Slicing (Round Robin)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-priority-based-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Priority-Based Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-preemptive-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Preemptive Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bare-metal-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bare-Metal Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bare-Metal Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Characteristics:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disadvantages:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtos-vs-bare-metal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTOS vs Bare-Metal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedded-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedded Operating Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Embedded Operating Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-linux-based-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Linux-based Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-rtos-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. RTOS Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#freertos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FreeRTOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FreeRTOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Use Cases:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zephyr-rtos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zephyr RTOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zephyr RTOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#used-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Used In:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cores-and-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cores and Threads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cores and Threads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-cores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPU Cores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Threads
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="real-time-operating-systems-rtos-in-embedded-systems">Real-Time Operating Systems (RTOS) in Embedded Systems</h1>
+<h2 id="overview">Overview</h2>
+<p>An <strong>operating system (OS)</strong> acts as an interface between the user (or application software) and hardware resources such as the CPU, memory, and peripherals.</p>
+<p>In embedded systems, operating systems are usually lightweight and optimized for <strong>deterministic behavior</strong>, especially when timing is critical.</p>
+<hr />
+<h2 id="system-layers">System Layers</h2>
+<h3 id="1-user-space-applications">1. User Space Applications</h3>
+<p>These are the programs written by developers.</p>
+<ul>
+<li>Application-level logic (e.g. sensor reading, motor control)</li>
+<li>Runs in a restricted environment (cannot directly access hardware)</li>
+<li>Examples:</li>
+<li>RFID access system (like your Pico W project)</li>
+<li>IoT dashboards</li>
+<li>Control algorithms</li>
+</ul>
+<hr />
+<h3 id="2-kernel-core-of-the-os">2. Kernel (Core of the OS)</h3>
+<p>The <strong>kernel</strong> is the central component of an operating system.</p>
+<h4 id="responsibilities">Responsibilities:</h4>
+<ul>
+<li>Task scheduling</li>
+<li>Memory management</li>
+<li>Hardware abstraction</li>
+<li>Interrupt handling</li>
+<li>Inter-process communication</li>
+</ul>
+<p>👉 In RTOS, the kernel is designed to be <strong>small, fast, and predictable</strong></p>
+<hr />
+<h3 id="3-shell-optional-in-embedded-systems">3. Shell (Optional in Embedded Systems)</h3>
+<p>The <strong>shell</strong> is a user interface layer that allows interaction with the system.</p>
+<ul>
+<li>Common in Linux-based embedded systems (e.g. Raspberry Pi OS, Ubuntu)</li>
+<li>Not always present in RTOS environments</li>
+<li>Used for:</li>
+<li>Running commands</li>
+<li>Debugging</li>
+<li>System monitoring</li>
+</ul>
+<hr />
+<h2 id="rtos-real-time-operating-system">RTOS (Real-Time Operating System)</h2>
+<p>An RTOS is an operating system designed to guarantee <strong>timing constraints</strong>.</p>
+<h3 id="key-feature">Key Feature:</h3>
+<blockquote>
+<p>Tasks must complete within a <strong>defined time limit</strong></p>
+</blockquote>
+<hr />
+<h2 id="core-concepts-of-rtos">Core Concepts of RTOS</h2>
+<h3 id="1-multitasking-and-concurrency">1. Multitasking and Concurrency</h3>
+<p>RTOS allows multiple tasks to run "simultaneously".</p>
+<ul>
+<li>Achieved via <strong>task switching</strong></li>
+<li>Each task gets CPU time in turns</li>
+<li>Gives the illusion of parallel execution on single-core systems</li>
+</ul>
+<hr />
+<h3 id="2-tasks-threads">2. Tasks (Threads)</h3>
+<p>A <strong>task</strong> (or thread) is a unit of execution.</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core</td>
+<td>Physical processing unit</td>
+</tr>
+<tr>
+<td>Thread</td>
+<td>Virtual execution path</td>
+</tr>
+<tr>
+<td>Task</td>
+<td>RTOS-managed unit of work</td>
+</tr>
+</tbody>
+</table>
+<p>👉 On a single core CPU:
+- Only one instruction executes at a time
+- RTOS switches between tasks very quickly</p>
+<hr />
+<h3 id="3-cpu-execution-cycle">3. CPU Execution Cycle</h3>
+<p>Every instruction follows:</p>
+<pre><code>
+Fetch → Decode → Execute → Write Back
+
+</code></pre>
+<ul>
+<li>Fetch: Get instruction from memory</li>
+<li>Decode: Interpret instruction</li>
+<li>Execute: Perform operation</li>
+<li>Write back: Store result</li>
+</ul>
+<p>RTOS does not change this cycle—it manages <strong>which task gets the cycle</strong></p>
+<hr />
+<h2 id="scheduling-in-rtos">Scheduling in RTOS</h2>
+<p>Scheduling determines <strong>which task runs and when</strong>.</p>
+<h3 id="common-scheduling-types">Common Scheduling Types:</h3>
+<h4 id="1-time-slicing-round-robin">1. Time Slicing (Round Robin)</h4>
+<ul>
+<li>Each task gets equal CPU time</li>
+<li>Simple but not always real-time safe</li>
+</ul>
+<h4 id="2-priority-based-scheduling">2. Priority-Based Scheduling</h4>
+<ul>
+<li>Higher priority tasks execute first</li>
+<li>Critical for real-time systems</li>
+</ul>
+<h4 id="3-preemptive-scheduling">3. Preemptive Scheduling</h4>
+<ul>
+<li>Higher priority task interrupts lower priority task</li>
+<li>Ensures fast response to critical events</li>
+</ul>
+<hr />
+<h2 id="bare-metal-systems">Bare-Metal Systems</h2>
+<p>A <strong>bare-metal system</strong> runs without an operating system.</p>
+<h3 id="characteristics">Characteristics:</h3>
+<ul>
+<li>No kernel</li>
+<li>No task scheduler</li>
+<li>Direct hardware control</li>
+</ul>
+<h3 id="structure">Structure:</h3>
+<pre><code>
+Main loop → direct hardware control
+
+</code></pre>
+<h3 id="advantages">Advantages:</h3>
+<ul>
+<li>Very fast</li>
+<li>Minimal overhead</li>
+<li>Full control of hardware</li>
+</ul>
+<h3 id="disadvantages">Disadvantages:</h3>
+<ul>
+<li>Difficult to scale</li>
+<li>No multitasking support</li>
+<li>Complex for large systems</li>
+</ul>
+<p>👉 Example:
+- Simple microcontroller LED blink program
+- Basic sensor polling systems</p>
+<hr />
+<h2 id="rtos-vs-bare-metal">RTOS vs Bare-Metal</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Bare-Metal</th>
+<th>RTOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multitasking</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Scheduling</td>
+<td>Manual</td>
+<td>Automatic</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>Low</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Real-time guarantees</td>
+<td>Limited</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Poor</td>
+<td>Good</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="embedded-operating-systems">Embedded Operating Systems</h2>
+<p>Embedded OS are full or semi-full operating systems designed for embedded hardware.</p>
+<h3 id="examples">Examples:</h3>
+<h4 id="1-linux-based-systems">1. Linux-based Systems</h4>
+<ul>
+<li>Ubuntu (embedded versions)</li>
+<li>Raspberry Pi OS</li>
+</ul>
+<p>Features:
+- Full multitasking
+- File systems
+- Networking
+- GUI support</p>
+<h4 id="2-rtos-examples">2. RTOS Examples</h4>
+<ul>
+<li>FreeRTOS</li>
+<li>Zephyr RTOS</li>
+</ul>
+<hr />
+<h2 id="freertos">FreeRTOS</h2>
+<p><a href="https://www.freertos.org">FreeRTOS</a> is one of the most widely used RTOS platforms.</p>
+<h3 id="key-features">Key Features:</h3>
+<ul>
+<li>Lightweight kernel</li>
+<li>Task scheduling</li>
+<li>Inter-task communication (queues, semaphores)</li>
+<li>Widely used in IoT and microcontrollers</li>
+</ul>
+<h3 id="common-use-cases">Common Use Cases:</h3>
+<ul>
+<li>Sensor systems</li>
+<li>Motor control</li>
+<li>IoT devices</li>
+<li>Embedded automation</li>
+</ul>
+<hr />
+<h2 id="zephyr-rtos">Zephyr RTOS</h2>
+<p>Zephyr is a modern open-source RTOS designed for more complex embedded systems.</p>
+<h3 id="features">Features:</h3>
+<ul>
+<li>Modular architecture</li>
+<li>Strong networking support (BLE, WiFi, IPv6)</li>
+<li>Device driver framework</li>
+<li>Scalable from small MCUs to complex systems</li>
+</ul>
+<h3 id="used-in">Used In:</h3>
+<ul>
+<li>IoT devices</li>
+<li>Smart sensors</li>
+<li>Industrial systems</li>
+</ul>
+<hr />
+<h2 id="cores-and-threads">Cores and Threads</h2>
+<h3 id="cpu-cores">CPU Cores</h3>
+<p>A <strong>core</strong> is a physical processing unit inside a CPU.</p>
+<ul>
+<li>Single-core → one task at a time</li>
+<li>Multi-core → multiple tasks simultaneously</li>
+</ul>
+<hr />
+<h3 id="threads">Threads</h3>
+<p>A <strong>thread</strong> is a software-level execution path.</p>
+<ul>
+<li>Managed by OS or RTOS</li>
+<li>Multiple threads can run on one core via time slicing</li>
+</ul>
+<hr />
+<h2 id="summary">Summary</h2>
+<ul>
+<li>Bare-metal = direct hardware control, no OS</li>
+<li>RTOS = time-controlled multitasking system</li>
+<li>Embedded OS = full OS for embedded devices (Linux-based or RTOS-based)</li>
+<li>Kernel = core of OS managing scheduling and hardware access</li>
+<li>Scheduling = determines task execution order</li>
+<li>Threads allow concurrency even on single-core systems</li>
+</ul>
+<hr />
+<h2 id="tags">Tags</h2>
+<p><code>#embedded-systems</code> <code>#RTOS</code> <code>#freertos</code> <code>#zephyr</code> <code>#bare-metal</code> <code>#microcontrollers</code> <code>#real-time-systems</code> <code>#operating-systems</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="squidfunk on Mastodon" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
