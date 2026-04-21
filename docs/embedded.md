@@ -35,13 +35,15 @@ An IMU sensor MPU6050 IMU ( accelerator and gyroscope) is used to measure angula
 A microcontroller processes sensor data and executes a control algorithm to determine corrective actions ( a raspberry pi pico w)
 #### Actuation unit
 Servo motors are used to physically adjust the platform angle and counteract disturbances, restoring it to a level position.(SG90)
+#### Power supply
+The system uses a shared 5V battery power source, with separate power paths for the control unit and actuators to ensure stability and prevent voltage fluctuations
 
 ### Block diagram
-![Block diagram](../../images/blockdiagram2.png)
+![Block diagram](images/blockdiagram3.png)
 
 ### Hardware implementation
 Reference image
-![Reference](../../images/project.png)
+![Reference](images/project.png)
 ```
 The system is built using an IMU sensor (MPU6050), a microcontroller such as the Raspberry Pi Pico W, and two servo motors. The IMU measures the platform’s orientation in real time, while the microcontroller processes this data and sends control signals to the servos. The servos then adjust the platform angle to maintain stability.
 ```
