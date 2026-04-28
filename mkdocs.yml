@@ -4,6 +4,13 @@ site_url: http://www.example.com
 
 theme:
   name: material
+  palette:
+    scheme: slate             # Defaults to dark mode
+    primary: black
+    accent: gold
+  font:
+    text: Roboto              # Main reading text
+    code: Fira Code
   
 
 plugins:

@@ -14,19 +14,22 @@ Many portable and mobile systems suffer from instability due to motion, vibratio
 - Reduced performance in robotic applications
 - Inefficiency in precision equipment
 
+A particularly pressing real-world example is the experience of wheelchair users navigating everyday terrain.Ramps, curb cuts, cobblestones and sloped pathways cause standard mounted trays to tilt unpredictably, risking spills of liquids, meals or medical supplies. This poses both a safety concern and a barrier to independence especially for users with limited upper-body mobility.
+
 Commercial stabilization systems exist; however, they are often expensive and complex, making them less accessible for educational and low-cost applications.
 
-There is therefore a need for a low-cost, simplified, and educational stabilization system that demonstrates the core principles of real-world control systems.
+
 ## Objective
 ### General
-To design and implement a low-cost embedded system that maintains a stable platform orientation using real-time feedback control.
+To design and implement a low-cost embedded system that maintains a stable platform orientation using real-time feedback control,with a focus on assistive technology appliications for wheelchair users. 
 
 ### Specific
 - To design a tilt detection system using an Inertial Measurement Unit (IMU)
 - To develop a real-time feedback control algorithm for stabilization
 - To implement actuator-based correction using servo motors
-- To achieve stable platform leveling under external disturbances
-- To demonstrate applications of control systems in real-world scenarios
+- To achieve stable platform leveling within 2 degrees under external disturbances
+- To demonstrate a practical assistive use case by simulating wheelchair tray stabilization on uneven surfaces.
+- To keep total hardware cost under $40 ensuring the solution remains accessible and replicable. 
 ## System architecture
 ### Components
 #### Sensor unit
@@ -36,7 +39,9 @@ A microcontroller processes sensor data and executes a control algorithm to dete
 #### Actuation unit
 Servo motors are used to physically adjust the platform angle and counteract disturbances, restoring it to a level position.(SG90)
 #### Power supply
-The system uses a shared 5V battery power source, with separate power paths for the control unit and actuators to ensure stability and prevent voltage fluctuations
+The system uses a shared  battery power source stepped down to a stable 5V using a buck regulator .This ensures clean ,consistent power delivery to both the Raspberry Pi Pico W and the SG90 servo motors, preventing voltage fluctuations that could affect control accuracy and IMU sensor readings.
+#### Platform
+A 3D-printed platform frame,lightweight low-cost mounting structure.
 
 ### Block diagram
 ![Block diagram](images/blockdiagram3.png)
@@ -66,6 +71,18 @@ The system uses a closed-loop feedback control process to maintain a level platf
 This process repeats continuously in real time, forming a feedback loop.
 
 ### Application
-This system can be applied in camera stabilization, drone payload control, robotics, and automotive sensor alignment, where maintaining stability is essential for performance and accuracy.
+This system has several real-world applicatiuons where maintaining a stable horizontal surface is critical:
+
+- **Camera stabilization** - Preventing blur and drift in mobile photography and videography.
+
+- **Drone payload control** - Keeping sensors or cargo levle during flight.
+
+- **Robotics** - Maintaining orientation in mobile robot platforms.
+
+- **Automotive sensor alignment** - Ensures accurate readings in moving vehicles.
+
+#### Featured Use Case: Wheelchair Assistive Tray
+A key motivating application for this project is an affordable self-leveling tray for wheelchair users. Wheelchair users frequently navigate uneven surfaces ;ramps and sloped pathways causing standard mounted trays to tilt unpredictably.This risks spilling liquids or dropping essential items, limiting independence particularly for users with limited upper-body mobility.
+This platform addresses that problem directly. Mounted to a standard wheelchair frame, it uses the MPU6050 IMU to detect tilt caused by the terrain and drives the SG90 servo motors to keep the tray surface level in real time ,with a total component cost under **$40** , it offers a genuinely commercial assistive device.
 
 
