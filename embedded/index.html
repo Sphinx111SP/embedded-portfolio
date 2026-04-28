@@ -34,6 +34,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
       
 
 
@@ -46,8 +49,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
       
     
     
@@ -62,7 +65,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="gold">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -114,8 +122,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -1445,6 +1453,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1491,6 +1510,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#featured-use-case-wheelchair-assistive-tray" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Featured Use Case: Wheelchair Assistive Tray
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1662,6 +1698,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1709,6 +1756,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#featured-use-case-wheelchair-assistive-tray" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Featured Use Case: Wheelchair Assistive Tray
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1746,18 +1810,19 @@
 <li>Reduced performance in robotic applications</li>
 <li>Inefficiency in precision equipment</li>
 </ul>
+<p>A particularly pressing real-world example is the experience of wheelchair users navigating everyday terrain.Ramps, curb cuts, cobblestones and sloped pathways cause standard mounted trays to tilt unpredictably, risking spills of liquids, meals or medical supplies. This poses both a safety concern and a barrier to independence especially for users with limited upper-body mobility.</p>
 <p>Commercial stabilization systems exist; however, they are often expensive and complex, making them less accessible for educational and low-cost applications.</p>
-<p>There is therefore a need for a low-cost, simplified, and educational stabilization system that demonstrates the core principles of real-world control systems.</p>
 <h2 id="objective">Objective</h2>
 <h3 id="general">General</h3>
-<p>To design and implement a low-cost embedded system that maintains a stable platform orientation using real-time feedback control.</p>
+<p>To design and implement a low-cost embedded system that maintains a stable platform orientation using real-time feedback control,with a focus on assistive technology appliications for wheelchair users. </p>
 <h3 id="specific">Specific</h3>
 <ul>
 <li>To design a tilt detection system using an Inertial Measurement Unit (IMU)</li>
 <li>To develop a real-time feedback control algorithm for stabilization</li>
 <li>To implement actuator-based correction using servo motors</li>
-<li>To achieve stable platform leveling under external disturbances</li>
-<li>To demonstrate applications of control systems in real-world scenarios</li>
+<li>To achieve stable platform leveling within 2 degrees under external disturbances</li>
+<li>To demonstrate a practical assistive use case by simulating wheelchair tray stabilization on uneven surfaces.</li>
+<li>To keep total hardware cost under $40 ensuring the solution remains accessible and replicable. </li>
 </ul>
 <h2 id="system-architecture">System architecture</h2>
 <h3 id="components">Components</h3>
@@ -1768,7 +1833,9 @@
 <h4 id="actuation-unit">Actuation unit</h4>
 <p>Servo motors are used to physically adjust the platform angle and counteract disturbances, restoring it to a level position.(SG90)</p>
 <h4 id="power-supply">Power supply</h4>
-<p>The system uses a shared 5V battery power source, with separate power paths for the control unit and actuators to ensure stability and prevent voltage fluctuations</p>
+<p>The system uses a shared  battery power source stepped down to a stable 5V using a buck regulator .This ensures clean ,consistent power delivery to both the Raspberry Pi Pico W and the SG90 servo motors, preventing voltage fluctuations that could affect control accuracy and IMU sensor readings.</p>
+<h4 id="platform">Platform</h4>
+<p>A 3D-printed platform frame,lightweight low-cost mounting structure.</p>
 <h3 id="block-diagram">Block diagram</h3>
 <p><img alt="Block diagram" src="../images/blockdiagram3.png" /></p>
 <h3 id="hardware-implementation">Hardware implementation</h3>
@@ -1800,7 +1867,24 @@
 </ul>
 <p>This process repeats continuously in real time, forming a feedback loop.</p>
 <h3 id="application">Application</h3>
-<p>This system can be applied in camera stabilization, drone payload control, robotics, and automotive sensor alignment, where maintaining stability is essential for performance and accuracy.</p>
+<p>This system has several real-world applicatiuons where maintaining a stable horizontal surface is critical:</p>
+<ul>
+<li>
+<p><strong>Camera stabilization</strong> - Preventing blur and drift in mobile photography and videography.</p>
+</li>
+<li>
+<p><strong>Drone payload control</strong> - Keeping sensors or cargo levle during flight.</p>
+</li>
+<li>
+<p><strong>Robotics</strong> - Maintaining orientation in mobile robot platforms.</p>
+</li>
+<li>
+<p><strong>Automotive sensor alignment</strong> - Ensures accurate readings in moving vehicles.</p>
+</li>
+</ul>
+<h4 id="featured-use-case-wheelchair-assistive-tray">Featured Use Case: Wheelchair Assistive Tray</h4>
+<p>A key motivating application for this project is an affordable self-leveling tray for wheelchair users. Wheelchair users frequently navigate uneven surfaces ;ramps and sloped pathways causing standard mounted trays to tilt unpredictably.This risks spilling liquids or dropping essential items, limiting independence particularly for users with limited upper-body mobility.
+This platform addresses that problem directly. Mounted to a standard wheelchair frame, it uses the MPU6050 IMU to detect tilt caused by the terrain and drives the SG90 servo motors to keep the tray surface level in real time ,with a total component cost under <strong>$40</strong> , it offers a genuinely commercial assistive device.</p>
 
 
 
